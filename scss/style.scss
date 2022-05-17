@@ -1,0 +1,276 @@
+@import "colors";
+@import "fonts";
+
+// CSS RESET
+html,
+body,
+div,
+span,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+img,
+ol,
+ul,
+li,
+input,
+label,
+select,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+footer,
+header,
+menu,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 100%;
+  border: 0;
+  color: $font-color;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  background: $white-100;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 20px;
+}
+
+::placeholder {
+  color: $input-placeholder;
+}
+
+::-ms-input-placeholder {
+  color: $input-placeholder;
+}
+
+@for $iterator from 20 through 70 {
+  .font-size-#{$iterator} {
+    font-size: $iterator + px;
+  }
+}
+
+.font-bold {
+  font-weight: 800;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-regular {
+  font-weight: 400;
+}
+.font-light {
+  font-weight: 300;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.no-wrap {
+  flex-wrap: nowrap;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.column {
+  flex-direction: column;
+}
+@for $iterator from 4 through 90 {
+  .gap-#{$iterator} {
+    gap: $iterator + px;
+  }
+}
+@for $iterator from 1 through 90 {
+  .pl-#{$iterator} {
+    padding-left: $iterator + px;
+  }
+  .pr-#{$iterator} {
+    padding-right: $iterator + px;
+  }
+  .pt-#{$iterator} {
+    padding-top: $iterator + px;
+  }
+  .pb-#{$iterator} {
+    padding-bottom: $iterator + px;
+  }
+
+  .ml-#{$iterator} {
+    margin-left: $iterator + px;
+  }
+  .mr-#{$iterator} {
+    margin-right: $iterator + px;
+  }
+  .mt-#{$iterator} {
+    margin-top: $iterator + px;
+  }
+  .mb-#{$iterator} {
+    margin-bottom: $iterator + px;
+  }
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.items-center {
+  align-items: center;
+}
+.full-width {
+  width: 100% !important;
+}
+.full-height {
+  height: 100% !important;
+}
+
+section.about {
+  .links {
+    ul li {
+      border-radius: 50%;
+      a {
+        height: 143.46px;
+        width: 143.46px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+      }
+
+      &[data-link="resume"] {
+        background: $red-orange;
+      }
+      &[data-link="work"] {
+        background: $sky-blue;
+      }
+      &[data-link="skills"] {
+        background: $pink;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 899px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.message-box {
+  background-color: $white-200;
+  border-radius: 10px;
+  padding: 90px 100px;
+  position: relative;
+
+  input,
+  textarea {
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .input-box {
+    height: 72px;
+  }
+
+  .input-box,
+  textarea {
+    border: 1px solid $input-border;
+    background-color: $white-200;
+    border-radius: 5px;
+    padding: 0px 30px;
+  }
+  textarea {
+    padding-top: 20px;
+  }
+
+  &::before {
+    content: "";
+    margin-top: -45px;
+    left: -21px;
+    width: 160px;
+    height: 120px;
+    position: absolute;
+    background: $white-200;
+    z-index: -1;
+    -webkit-transform: rotate(45deg) skew(-10deg, -10deg);
+    -moz-transform: rotate(45deg) skew(-10deg, -10deg);
+    -o-transform: rotate(45deg) skew(-10deg, -10deg);
+    -ms-transform: rotate(45deg) skew(-10deg, -10deg);
+    transform: rotate(45deg) skew(-10deg, -10deg);
+    border-radius: 10px;
+  }
+  button[type="submit"] {
+    border: none;
+    height: 72px;
+    background-color: $font-color;
+    color: #fff;
+    border-radius: 64px;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #414141;
+    }
+  }
+}
+
+footer {
+  height: 185px;
+  background: #000;
+  color: #fff;
+}
